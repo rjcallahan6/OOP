@@ -8,6 +8,7 @@ Card::Card(Rank r, Suit s) : m_rank(r), m_suit(s)
 
 std::ostream& operator << (std::ostream& output, Card card)
 {
+  
   switch (card.m_rank)
   {
     case 0:
@@ -50,6 +51,24 @@ std::ostream& operator << (std::ostream& output, Card card)
       output << "A";
       break;
   }
+  
+  switch (card.m_suit)
+  {
+    case 0:
+      output << "S";
+      break;
+    case 1:
+      output << "C";
+      break;
+    case 2:
+      output << "H";
+      break;
+    case 3:
+      output << "D";
+      break;
+ 
+  }
+  return output;
 
 
 
