@@ -70,17 +70,30 @@ std::deque<Card> Game::create_deck()
                             {King, Hearts} };
 }
 
+//shuffles deck
 void Game::shuffle()
 {
   std::shuffle(deck.begin(), deck.end(),std::default_random_engine(seed));
 }
 
-void Game::split()
+//alternates cards between twoplayers
+void Game::deal()
 {
   while (deck.begin() != deck.end())
   {
-    
+    player1.push_front(deck.front());
+    deck.pop_front();
+    player2.push_front(deck.front());
+    deck.pop_front();   
   }
+}
+
+//returns top card
+Card Game::pop(std::deque<Card>& playersDeck)
+{
+  Card temp = playersDeck.front();
+  playersDeck.pop_front();
+  return temp;
 }
 
 
