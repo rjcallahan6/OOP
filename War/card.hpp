@@ -1,9 +1,10 @@
 #ifndef CARD_HPP 
 #define CARD_HPP
 
+#include <iostream>
+
 enum Rank
 {
-  Ace,
   Two,
   Three,
   Four,
@@ -16,6 +17,7 @@ enum Rank
   Jack,
   Queen,
   King,
+  Ace
 };
 
 enum Suit
@@ -30,11 +32,15 @@ enum Suit
 class Card
 {
 public:
+  Card() = default;
   Card(Rank r, Suit s);
+  
+  char get_suit() const {return m_suit;};
+  char get_rank() const (return m_rank;};
 
 private:
-  Rank rank;
-  Suit suit;
+  Rank m_rank;
+  Suit m_suit;
 };
 
 
