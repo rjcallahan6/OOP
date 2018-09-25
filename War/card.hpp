@@ -31,12 +31,15 @@ enum Suit
 
 class Card
 {
+  
 public:
   Card() = default;
   Card(Rank r, Suit s);
   
   char get_suit() const {return m_suit;};
   char get_rank() const (return m_rank;};
+  
+  friend std::ostream& operator << (std::ostream& output, Card card);                       
 
 private:
   Rank m_rank;
